@@ -1,0 +1,89 @@
+/*#overlay {
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  opacity:0.6; 
+}
+*/
+
+body {
+	background-image: url("../images/bg-pic.jpg");
+	color: white;
+	box-sizing: border-box;
+}
+
+div#instructPopup {
+	z-index: 100;
+	background-color: gray;
+	color: gold;
+	width: 50%;
+	box-sizing: border-box;
+	padding: 2.5% 5% 2.5% 5%;
+	margin: 20% 25%;
+	font-size: 24px;
+	text-align: center;
+	position: absolute;
+}
+
+img#close {
+	position: absolute;
+	top: 1.5%;
+	right: 1%;
+	max-width: 3%;
+	z-index: 101;
+}
+
+header {
+	overflow: auto;
+	background-image: url(../images/headerbg.jpg);
+    border-bottom: 3px;
+    border-style: solid;
+    border-color: #dddddd;
+    width: 100%;
+	
+}
+
+#innerHeader {
+	max-width: 96%;
+	padding: 2.5% 0;
+	margin: 0 auto;
+	text-align: center;
+	font-family: 'Georgia', Times, Times New Roman, serif;
+	color: black;
+	font-weight: bold;
+	border: 100px;
+    border-color: #dddddd;
+}
+
+#wrapper {
+	max-width: 90%;
+	margin: 5% auto 5% auto;
+}
+
+#crysCntr {
+	float: left;
+	display: inline-block;
+	background-color: violet;
+	max-width: 50%;
+	height: 100px;
+}
+#statBox {
+	display: inline-block;
+	background-color: teal;
+	height: 100px;
+	max-width: 50%;
+}
+#crysRow {
+	display: inline-block;
+	padding: 0 2.5%;
+	text-align: center;
+
+}
+
+.crystals {
+	display: inline-block;
+	max-height: 400px;
+	max-width: 20%;
+}

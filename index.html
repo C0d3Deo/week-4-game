@@ -13,21 +13,46 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
         <link rel="stylesheet" href="assets/css/reset.css">
-        <!--<link rel="stylesheet" href="css/main.css"> -->
+        <link rel="stylesheet" href="assets/css/style.css">
     </head>
     <body>
 
         <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+        <!-- <section id="overlay" style="display: none"> -->
+        <header>
+            <div id="innerHeader">
+              <h1>Crystal Power</h1>
+            </div>
+        </header>
+        <div id="instructPopup" title="">
+            <div>
+                <img src="assets/images/close-icon.png" alt="" id="close">
+            </div id="popText">
+            Welcome to the Crystal Game! Click the crystals below to try to reach the chosen number. Going over = GAME OVER!
+        </div>
+        <!-- </section> -->
 
-        <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.4.min.js"><\/script>')</script>
+        <div id="wrapper">
+            <div id="crysGoal"></div>
+            <div id="statBox">
+            	<p id="wins">Wins: </p>
+            	<p id="losses">Losses: </p>
+            </div>
+            <section id="crysRow">
+            	<img src="assets/images/crystalorange.jpg" alt="" class="crystals" id="crys1">
+            	<img src="assets/images/crystalpurple.jpg" alt="" class="crystals" id="crys2">
+            	<img src="assets/images/crystalblue.jpg" alt="" class="crystals" id="crys3">
+            	<img src="assets/images/crystalclear.jpg" alt="" class="crystals" id="crys4">
+            </section>
+            <div id="scoreBox">
+            	<p class="scoreHeader"><h3>Current Points:</h3> </p>
+            	<div class="scoreCntr"></div>
+            </div>
+        </div>
 
-        <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-        <script>
-            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
-            ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
-        </script>
-        <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+       <script type= "text/javascript" src="assets/javascript/game.js"></script>
+
+        
     </body>
 </html>
