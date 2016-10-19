@@ -1,122 +1,100 @@
-var wins = "";
-var lossses = "";
+var wins = 0;
+var losses = 0;
 var goal = "";
-var score = "";
+var score = 0;
 var crystals = [];
-var		crys1 = "";
-var		crys2 = "";
-var		crys3 = "";
-var		crys4 = "";
 
 $(document).ready(function() {
 
 //This code was copied from the internet however I will comment my understanding of the function
-$('<div id="overlay">').css({//creating overlay div
-      "width" : "100%"
-    , "height" : "100%" //both lines are to cover entire window
-    , "background" : "#000" //set black background
-    , "position" : "fixed" //static imposition
-    , "top" : "0"
-    , "left" : "0" //rest any inherent margins from the browser
-    , "zIndex" : "50" //bring div to forefront of page
-    , "MsFilter" : "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)"
-    , "filter" : "alpha(opacity=60)"
-    , "MozOpacity" : 0.6
-    , "KhtmlOpacity" : 0.6
-    , "opacity" : 0.6 //all the above are cross-browser compatability commands that will all do the same thing but will be picked up or ignored based on the browser
+// $('<div id="overlay">').css({//creating overlay div
+//       "width" : "100%"
+//     , "height" : "100%" //both lines are to cover entire window
+//     , "background" : "#000" //set black background
+//     , "position" : "fixed" //static imposition
+//     , "top" : "0"
+//     , "left" : "0" //rest any inherent margins from the browser
+//     , "zIndex" : "50" //bring div to forefront of page
+//     , "MsFilter" : "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)"
+//     , "filter" : "alpha(opacity=60)"
+//     , "MozOpacity" : 0.6
+//     , "KhtmlOpacity" : 0.6
+//     , "opacity" : 0.6 //all the above are cross-browser compatability commands that will all do the same thing but will be picked up or ignored based on the browser
 
-}).appendTo(document.body); //add this created overlay to the body of the webpage
-$("#instructPopup").show();
-$('#close').click(function(){
-	$("#instructPopup").remove();
-	$("#overlay").remove();
-});
+// }).appendTo(document.body); //add this created overlay to the body of the webpage
+// $("#instructPopup").show();
+// $('#close').click(function(){
+// 	$("#instructPopup").remove();
+// 	$("#overlay").remove();
+// });
 
-function game (){
+	function game (){
 	
-	// function randomizer() {
 		goal = 
 			Math.floor(Math.random() * (120 - 19 + 1)) + 19;
-			console.log(goal);
+			$("#crysGoal").html(goal);
 		for (var i = 0; i < 4; i++) {
 			do	{var value = Math.floor(Math.random() * (12)) + 1;}
 		 	while(crystals.indexOf(value) !== -1 ) 
 			crystals.push(value);
 		}
-		crys1 = crystals[0];
-		crys2 = crystals[1];
-		crys3 = crystals[2];
-		crys4 = crystals[3];
 
-} game(goal, crystals); 
-console.log(crystals);
-console.log(crys1);
-console.log(crys2)
-// 	}
-// }
+	function reset (){
+		 goal = "";
+		 score = 0;
+		 crystals = [];
+		$(".scoreCntr").html(0);
+	}
 
-		
+	// } game(goal, crystals); 
 
-			// 		}
+	function check (){
+		if (score === goal) {
+			var audio = new Audio("../week-4-game/assets/images/oh-yeah.mp3");
+					audio.play();
+			alert("Yay!");
+			wins++;
+			$("span#wins").empty().html(wins);
+			reset ();
+			game ();
+		}
+		if (score > goal) {
+			losses++;
+			$("span#losses").empty().html(losses);
+			alert("YOU'VE LOST THE GAME!!! <O>____<O>");
+			reset();
+			game();
+		}
+	}
+		if (score < goal) {
+			$(".crystals").click(function userClick (){
+					if ($(this).is("#crys1")){
+						console.log(crystals[0]);
+						score += crystals[0];
+						$(".scoreCntr").html(score);
+						check();
+					}; 
+					if ($(this).is("#crys2")){
+						console.log(crystals[1]);
+						score += crystals[1];
+						$(".scoreCntr").html(score);
+						check();
+					}; 
+					if ($(this).is("#crys3")){
+						console.log(crystals[2]);
+						score += crystals[2];
+						$(".scoreCntr").html(score);
+						check();
+					}; 
+					if ($(this).is("#crys4")){
+						console.log(crystals[3]);
+						score += crystals[3];
+						$(".scoreCntr").html(score);
+						check();
+					}; 
 
-// 			}
-// 		crysArray.push(crys1)
-// 		crys2 = 
-// 			Math.floor(Math.random() * (12 - 1 + 1)) + 1;
-// 			if ()
-// 		console.log(crys2);
-// 		crys3 = 
-// 			Math.floor(Math.random() * (12 - 1 + 1)) + 1;
-// 		console.log(crys3);
-// 		crys4 = 
-// 			Math.floor(Math.random() * (12 - 1 + 1)) + 1;
-// 		console.log(crys4);
-
-// 	}
-// 	randomizer();
-// debugger;
-// 	document.onkeyup = function(event) {
-// 		console.log('event*******',event)
-// 		if (letters.indexOf(event.key) != -1){
-// 			var userInput = String.fromCharCode(event.keyCode).toLowerCase();
-// 			var pastInputs = document.getElementById('pastInputs');
-
-// 				if (userInput == computerGuess){
-// 					var audio = new Audio("../week-3-game/assets/images/Oh-Yeah.mp3");
-// 					audio.play();
-// 					alert("WINNAH!!!");
-// 					var winCt = document.getElementById('winCt');
-// 					winCt.innerHTML = wins++;
-// 					pastGuess = "";
-// 					pastInputs;
-// 	            	pastInputs.innerHTML = pastGuess;		
-// 					game();
-// 				}else if (userInput != computerGuess && guesses > 0) {
-// 					guessCntr;
-// 		//For some reason, the user technically has 10 chances instead of 9 because the first keypress does not actual bring down the counter, Did not have time to investigate further.
-// 					guesses--
-// 					guessCntr.innerHTML = guesses;
-// 		            pastGuess += userInput + ", ";
-// 		            pastInputs;
-// 	            	pastInputs.innerHTML = pastGuess;
-		              			 
-// 				}else if (guesses == 0) {
-// 					guessCntr;
-// 					guessCntr.innerHTML = guesses--;
-// 					pastGuess = "";
-// 					pastInputs;
-// 	            	pastInputs.innerHTML = pastGuess;
-// 	            	//the popups seem to be superseding the commands above it. I could not figure out how to force execution order
-// 						alert("You lose!");
-// 						confirm("Try again, child?");
-// 					if (true) {
-// 					var lossCt = document.getElementById('lossCt')
-// 					lossCt.innerHTML = losses++;
-// 					game();
-// 					}
-// 				}
-// 			}}
-
-// game();
+			}); 
+		} return;
+	} game(); 
 
 });

@@ -14,6 +14,10 @@ body {
 	box-sizing: border-box;
 }
 
+br {
+	line-height: 30px;
+}
+
 div#instructPopup {
 	z-index: 100;
 	background-color: gray;
@@ -47,7 +51,7 @@ header {
 
 #innerHeader {
 	max-width: 96%;
-	padding: 2.5% 0;
+	padding: 1.5% 0;
 	margin: 0 auto;
 	text-align: center;
 	font-family: 'Georgia', Times, Times New Roman, serif;
@@ -59,21 +63,29 @@ header {
 
 #wrapper {
 	max-width: 90%;
-	margin: 5% auto 5% auto;
+	margin: 2% auto 5% auto;
+	background-color: #FAFAD2;
 }
 
-#crysCntr {
-	float: left;
-	display: inline-block;
-	background-color: violet;
-	max-width: 50%;
-	height: 100px;
+#crysGoal {
+	width: 60%;
+	padding: 0 20%;
+	background-color: gold;
+	color: black;
+	font-weight: bolder;
+	font-size: 72px;
+	text-align: center;
 }
+
+
 #statBox {
 	display: inline-block;
 	background-color: teal;
-	height: 100px;
-	max-width: 50%;
+	width: 40%;
+	box-sizing: border-box;
+	margin: 1% 30%;
+	padding: 1% 2%;
+	font-size: 24px;
 }
 #crysRow {
 	display: inline-block;
@@ -86,4 +98,27 @@ header {
 	display: inline-block;
 	max-height: 400px;
 	max-width: 20%;
+}
+
+#scoreBox {
+	width: 40%;
+	margin: 1% 30%;
+	padding-bottom: 3%;
+
+}
+
+.scoreHeader {
+	background-color: coral;
+	padding: 2%;
+	font-size: 30px;
+	text-align: center;
+}
+
+.scoreCntr {
+	background-color: coral;
+	margin-top: 2%;
+	/*height: 100px;*/
+	padding: 2%;
+	font-size: 60px;
+	text-align: center;	
 }
