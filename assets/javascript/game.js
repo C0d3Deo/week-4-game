@@ -7,26 +7,26 @@ var crystals = [];
 $(document).ready(function() {
 
 //This code was copied from the internet however I will comment my understanding of the function
-// $('<div id="overlay">').css({//creating overlay div
-//       "width" : "100%"
-//     , "height" : "100%" //both lines are to cover entire window
-//     , "background" : "#000" //set black background
-//     , "position" : "fixed" //static imposition
-//     , "top" : "0"
-//     , "left" : "0" //rest any inherent margins from the browser
-//     , "zIndex" : "50" //bring div to forefront of page
-//     , "MsFilter" : "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)"
-//     , "filter" : "alpha(opacity=60)"
-//     , "MozOpacity" : 0.6
-//     , "KhtmlOpacity" : 0.6
-//     , "opacity" : 0.6 //all the above are cross-browser compatability commands that will all do the same thing but will be picked up or ignored based on the browser
+$('<div id="overlay">').css({//creating overlay div
+      "width" : "100%"
+    , "height" : "100%" //both lines are to cover entire window
+    , "background" : "#000" //set black background
+    , "position" : "fixed" //static imposition
+    , "top" : "0"
+    , "left" : "0" //rest any inherent margins from the browser
+    , "zIndex" : "50" //bring div to forefront of page
+    , "MsFilter" : "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)"
+    , "filter" : "alpha(opacity=60)"
+    , "MozOpacity" : 0.6
+    , "KhtmlOpacity" : 0.6
+    , "opacity" : 0.6 //all the above are cross-browser compatability commands that will all do the same thing (create transparency) but will be picked up or ignored based on the browser
 
-// }).appendTo(document.body); //add this created overlay to the body of the webpage
-// $("#instructPopup").show();
-// $('#close').click(function(){
-// 	$("#instructPopup").remove();
-// 	$("#overlay").remove();
-// });
+}).appendTo(document.body); //add this created overlay to the body of the webpage
+$("#instructPopup").show();
+$('#close').click(function(){
+	$("#instructPopup").remove();
+	$("#overlay").remove();
+});
 
 	function game (){
 	
@@ -66,6 +66,8 @@ $(document).ready(function() {
 			game();
 		}
 	}
+
+	//This function compounds on top of itself after each game. I have no idea how to stop it. I've tried using return in various places. I've tried giving it its own function. I've tried including it in my reset (using return). I don't even know what to search to get help. Google wasn't giving me relevant issues this time around.
 		if (score < goal) {
 			$(".crystals").click(function userClick (){
 					if ($(this).is("#crys1")){
