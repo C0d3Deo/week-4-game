@@ -1,3 +1,13 @@
+var wins = "";
+var lossses = "";
+var goal = "";
+var score = "";
+var crystals = [];
+var		crys1 = "";
+var		crys2 = "";
+var		crys3 = "";
+var		crys4 = "";
+
 $(document).ready(function() {
 
 //This code was copied from the internet however I will comment my understanding of the function
@@ -21,16 +31,6 @@ $('#close').click(function(){
 	$("#instructPopup").remove();
 	$("#overlay").remove();
 });
-var wins = "";
-var lossses = "";
-var goal = "";
-var score = "";
-var crystals = [];
-var		crys = crystals[0];
-var		crys2 = crystals[1];
-var		crys3 = crystals[2];
-var		crys4 = crystals[3];
-
 
 function game (){
 	
@@ -43,10 +43,14 @@ function game (){
 		 	while(crystals.indexOf(value) !== -1 ) 
 			crystals.push(value);
 		}
-		return crystals;
+		crys1 = crystals[0];
+		crys2 = crystals[1];
+		crys3 = crystals[2];
+		crys4 = crystals[3];
+
 } game(goal, crystals); 
 console.log(crystals);
-console.log(crys);
+console.log(crys1);
 console.log(crys2)
 // 	}
 // }
