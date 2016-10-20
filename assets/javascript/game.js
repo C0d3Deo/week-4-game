@@ -38,6 +38,7 @@ $('#close').click(function(){
 		 	while(crystals.indexOf(value) !== -1 ) 
 			crystals.push(value);
 		}
+	} game(goal, crystals); 
 
 	function reset (){
 		 goal = "";
@@ -46,8 +47,7 @@ $('#close').click(function(){
 		$(".scoreCntr").html(0);
 	}
 
-	// } game(goal, crystals); 
-
+	//This function compounds on top of itself after each game. I have no idea how to stop it. I've tried using return in various places. I've tried giving it its own function. I've tried including it in my reset (using return). I don't even know what to search to get help. Google wasn't giving me relevant issues this time around.
 	function check (){
 		if (score === goal) {
 			var audio = new Audio("../week-4-game/assets/images/oh-yeah.mp3");
@@ -66,8 +66,6 @@ $('#close').click(function(){
 			game();
 		}
 	}
-
-	//This function compounds on top of itself after each game. I have no idea how to stop it. I've tried using return in various places. I've tried giving it its own function. I've tried including it in my reset (using return). I don't even know what to search to get help. Google wasn't giving me relevant issues this time around.
 		if (score < goal) {
 			$(".crystals").click(function userClick (){
 					if ($(this).is("#crys1")){
@@ -96,7 +94,5 @@ $('#close').click(function(){
 					}; 
 
 			}); 
-		} return;
-	} game(); 
-
+		}
 });
